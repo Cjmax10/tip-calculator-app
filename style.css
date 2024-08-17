@@ -200,3 +200,44 @@ button:hover {
 .display-section button#reset:hover{
     background-color: var(--light-grayish-cyan);
 }
+
+@media (max-width: 1200px) {
+    .calculator input {
+        font-size: 15px;
+    }
+
+    .display-section .display .tip-amount .value, .display-section .display .total-bill-amount .value {
+        font-size: 42px;
+    }
+}
+
+@media (max-width: 1000px) {
+    .calculator input {
+        font-size: 12px;
+    }
+
+    .display-section .display .tip-amount .value, .display-section .display .total-bill-amount .value {
+        font-size: 35px;
+    }
+}
+
+@media (max-width: 860px) {
+    body {
+        padding: 0;
+    }
+
+    .calculator {
+        margin: 50px auto;
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 10px;
+    }
+
+    .calculator input {
+        padding: 15px 5px;
+    }
+
+    .display-section .display .tip-amount .value, .display-section .display .total-bill-amount .value {
+        font-size: 22px;
+    }
+}
