@@ -1,0 +1,202 @@
+:root {
+    --strong-cyan: hsl(172, 67%, 45%);
+    --very-dark-cyan: hsl(183, 100%, 15%);
+    --dark-grayish-cyan: hsl(186, 14%, 43%);
+    --grayish-cyan: hsl(184, 14%, 56%);
+    --light-grayish-cyan: hsl(185, 41%, 84%);
+    --very-light-grayish-cyan: hsl(189, 41%, 97%);
+    --white: hsl(0, 0%, 100%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Space Mono", monospace;
+    background-color: var(--light-grayish-cyan);
+    color: var(--dark-grayish-cyan);
+    padding: 50px;
+}
+
+.d-none {
+    display: none;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+h1 {
+    font-size: 34px;
+    letter-spacing: 8px;
+    line-height: 42px;
+    text-align: center;
+    margin: 30px 0;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+.calculator {
+    width: 1200px;
+    max-width: 90vw;
+    margin: 80px auto;
+    background-color: var(--white);
+    border-radius: 20px;
+    padding: 30px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+}
+
+.calculator label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.calculator input {
+    width: 100%;
+    border: none;
+    background-color: var(--very-light-grayish-cyan);
+    font-size: 18px;
+    padding: 15px;
+    color: var(--very-dark-cyan);
+    font-weight: 600;
+    border-radius: 5px;
+}
+
+.calculator input:focus {
+    outline: none;
+}
+
+.calculator input.invalid {
+    border: 2px solid red;
+}
+
+.calculator input.valid {
+    border: 2px solid var(--strong-cyan);
+}
+
+.input-section form{
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.input-section .input-group {
+    position: relative;
+}
+
+.input-section .input-group .error-message {
+    position: absolute;
+    top: 0px;
+    right: 0;
+    font-size: 14px;
+    color: red;
+}
+
+.input-section .tip-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.tip {
+    pointer-events: none;
+}
+
+.input-section .tip-container .tip-wrapper:hover input:disabled {
+    color: var(--very-dark-cyan);
+    background-color: var(--light-grayish-cyan);
+}
+
+.input-section .tip-container .tip-wrapper.selected input:disabled {
+    color: var(--very-dark-cyan);
+    background-color: var(--light-grayish-cyan);
+}
+
+.input-section .tip-container input:disabled {
+    text-align: center;
+    color: var(--light-grayish-cyan);
+    background-color: var(--very-dark-cyan);
+}
+
+.input-section .tip-container input.custom {
+    text-align: right;
+}
+
+.display-section {
+    background-color: var(--very-dark-cyan);
+    border-radius: 20px;
+    padding: 60px 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.display-section .display .tip-amount,
+.display-section .display .total-bill-amount {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.display-section .display .tip-amount .label,
+.display-section .display .total-bill-amount .label {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--white);
+    position: relative;
+}
+
+.display-section .display .tip-amount .label::after,
+.display-section .display .total-bill-amount .label::after {
+    content: '/person';
+    position: absolute;
+    left: 0;
+    top: 24px;
+    font: 8px;
+    color: var(--dark-grayish-cyan);
+    font-weight: 400;
+    width: max-content;
+    
+}
+
+.display-section .display .tip-amount .value,
+.display-section .display .total-bill-amount .value {
+    font-size: 50px;
+    font-weight: 600;
+    color: var(--strong-cyan);
+    position: relative;
+}
+
+.display-section button#reset{
+    display: block;
+    width: 100%;
+    background-color: var(--strong-cyan);
+    color: var(--very-dark-cyan);
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 0.8px;
+    border: none;
+    border-radius: 5px;
+    padding: 15px;
+}
+
+.display-section button#reset:hover{
+    background-color: var(--light-grayish-cyan);
+}
